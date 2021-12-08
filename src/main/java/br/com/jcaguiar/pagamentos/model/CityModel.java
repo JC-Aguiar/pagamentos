@@ -27,7 +27,7 @@ public class CityModel extends MasterModel {
     @Column(nullable = false, unique = true)
     String completeName;
 
-    @NonNull @ManyToOne
+    @NonNull @ManyToOne(fetch = FetchType.LAZY)
     StateModel state;
 
     public void setState(StateModel state) {

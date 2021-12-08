@@ -24,6 +24,6 @@ public class CountryModel {
     @Column(nullable = false)
     String name;
 
-    @NonNull @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @NonNull @OneToMany(mappedBy = "country", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<StateModel> states = new ArrayList<>();
 }

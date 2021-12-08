@@ -7,6 +7,7 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Entity(name = "product")
-final public class ProductModel extends MasterModel {
+final public class ProductModel extends MasterModel implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

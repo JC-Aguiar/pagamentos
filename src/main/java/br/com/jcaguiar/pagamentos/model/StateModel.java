@@ -30,7 +30,7 @@ public class StateModel {
     @Column(nullable = false, unique = true)
     String completeName;
 
-    @OneToMany(mappedBy = "state", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "state", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<CityModel> cities = new ArrayList<>();
 
     @NonNull @ManyToOne

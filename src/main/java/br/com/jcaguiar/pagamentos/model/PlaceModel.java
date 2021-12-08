@@ -31,5 +31,7 @@ public class PlaceModel extends MasterModel {
     @Column(nullable = false)
     String postal;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    ClientModel client;
 
 }
