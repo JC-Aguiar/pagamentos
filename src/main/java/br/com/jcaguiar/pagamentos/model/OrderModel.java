@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity(name = "order")
-final public class OrderModel extends MasterModel implements Serializable {
+final public class OrderModel extends MasterModel {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

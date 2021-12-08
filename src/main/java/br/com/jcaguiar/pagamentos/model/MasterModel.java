@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 @SuperBuilder
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PROTECTED)
-public class MasterModel {
+public class MasterModel implements Serializable {
 
     LocalDateTime creationDate = LocalDateTime.parse(
             LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)

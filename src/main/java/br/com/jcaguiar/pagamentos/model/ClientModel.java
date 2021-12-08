@@ -8,7 +8,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity(name = "client")
-public class ClientModel extends MasterModel implements Serializable {
+public class ClientModel extends MasterModel {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

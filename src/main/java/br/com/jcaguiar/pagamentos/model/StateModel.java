@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -19,7 +20,7 @@ import java.util.Optional;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity(name = "state")
-public class StateModel {
+public class StateModel implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;

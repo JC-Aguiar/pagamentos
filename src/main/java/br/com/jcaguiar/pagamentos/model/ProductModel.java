@@ -16,7 +16,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @Entity(name = "product")
-final public class ProductModel extends MasterModel implements Serializable {
+final public class ProductModel extends MasterModel {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
