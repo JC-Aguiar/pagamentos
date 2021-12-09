@@ -22,27 +22,27 @@ public class MasterController<ID> {
     @GetMapping
     public ResponseEntity<MasterDTO> findAll() {
         HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<>(null, starus);
+        return new ResponseEntity<>(null, status);
     }
 
     @PostMapping
     public ResponseEntity<MasterDTO> saveOne(@Valid MasterDTO post) {
         HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<>(null, starus);
+        return new ResponseEntity<>(null, status);
     }
 
 
     @PutMapping("id/{?}")
     public ResponseEntity<MasterDTO> upOne(@RequestParam ID id, @Valid MasterDTO post) {
         HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<>(null, starus);
+        return new ResponseEntity<>(null, status);
     }
 
 
     @DeleteMapping("id/{?}")
     public ResponseEntity<MasterDTO> deletOne(@RequestParam ID id) {
         HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<>(null, starus);
+        return new ResponseEntity<>(null, status);
     }
 
 
