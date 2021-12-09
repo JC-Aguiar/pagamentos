@@ -1,5 +1,9 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.order;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
+import br.com.jcaguiar.pagamentos.model.product.ProductModel;
+import br.com.jcaguiar.pagamentos.model.client.ClientModel;
+import br.com.jcaguiar.pagamentos.model.places.PlaceModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +12,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,11 +31,11 @@ final public class OrderModel extends MasterModel {
                 inverseJoinColumns = @JoinColumn(name = "product_id"))
     List<ProductModel> produts = new ArrayList<>();
 
-    @NonNull @Column(nullable = false)
+    @NonNull
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     ClientModel client;
 
-    @NonNull @Column(nullable = false)
+    @NonNull
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     PlaceModel deliveryPlace;
 }

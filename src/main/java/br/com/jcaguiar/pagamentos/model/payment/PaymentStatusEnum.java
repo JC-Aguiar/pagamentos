@@ -1,4 +1,4 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.payment;
 
 public enum PaymentStatusEnum {
 

@@ -1,5 +1,6 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.places;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,10 +9,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
@@ -19,8 +16,8 @@ import java.util.Optional;
 @SuperBuilder
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity(name = "state")
-public class StateModel implements Serializable {
+@Entity(name = "city")
+public class CityModel extends MasterModel {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
@@ -31,14 +28,12 @@ public class StateModel implements Serializable {
     @Column(nullable = false, unique = true)
     String completeName;
 
-    @OneToMany(mappedBy = "state", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<CityModel> cities = new ArrayList<>();
+    @NonNull @ManyToOne(fetch = FetchType.LAZY)
+    StateModel state;
 
-    @NonNull @ManyToOne
-    CountryModel country;
-
-    public void setCountry(@NonNull CountryModel country) {
-        this.country = country;
+    public void setState(StateModel state) {
+        this.state = state;
+        setCompleteName();
     }
 
     public String getCompleteName() {
@@ -47,14 +42,15 @@ public class StateModel implements Serializable {
     }
 
     public void setCompleteName() {
-        Optional.of(country).ifPresentOrElse(this::getCompleteName, this::noCompleteName);
+        Optional.of(state).ifPresentOrElse(this::setCompleteName, this::noCompleteName);
     }
 
-    private void getCompleteName(@NonNull CountryModel country) {
-        completeName = (country.getName() + name).toUpperCase(Locale.ROOT);
+    private void setCompleteName(@NonNull StateModel state) {
+        completeName = (state.getCompleteName() + name).toUpperCase(Locale.ROOT);
     }
 
     private void noCompleteName() {
         completeName = name;
     }
+
 }

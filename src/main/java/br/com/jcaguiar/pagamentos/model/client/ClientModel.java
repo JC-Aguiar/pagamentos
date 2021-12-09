@@ -1,5 +1,8 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.client;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
+import br.com.jcaguiar.pagamentos.model.order.OrderModel;
+import br.com.jcaguiar.pagamentos.model.places.PlaceModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,7 +41,6 @@ public class ClientModel extends MasterModel {
 
     @NonNull @Column(nullable = false)
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "place_id")
     List<PlaceModel> places = new ArrayList<>();
 
 }

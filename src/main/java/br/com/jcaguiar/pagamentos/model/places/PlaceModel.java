@@ -1,5 +1,7 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.places;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
+import br.com.jcaguiar.pagamentos.model.client.ClientModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Data
 @SuperBuilder

@@ -1,5 +1,6 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.order;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;

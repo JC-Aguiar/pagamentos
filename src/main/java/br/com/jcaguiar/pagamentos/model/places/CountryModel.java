@@ -1,4 +1,4 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.places;
 
 import lombok.AccessLevel;
 import lombok.Data;
