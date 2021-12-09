@@ -1,5 +1,6 @@
 package br.com.jcaguiar.pagamentos.model;
 
+import br.com.jcaguiar.pagamentos.model.category.CategoryModel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

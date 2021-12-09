@@ -15,9 +15,9 @@ import javax.validation.Valid;
 public class MasterController<ID> {
 
     final protected MasterService service;
-    final protected MasterModel modelEntity;
-    final protected MasterDTO requestDto;
-    final protected MasterDTO responseDto;
+    final protected Class<? extends MasterModel> modelEntity;
+    final protected Class<? extends MasterDTO> requestDto;
+    final protected Class<? extends MasterDTO> responseDto;
 
     @GetMapping
     public ResponseEntity<MasterDTO> findAll() {

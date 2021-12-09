@@ -1,5 +1,6 @@
-package br.com.jcaguiar.pagamentos.model;
+package br.com.jcaguiar.pagamentos.model.category;
 
+import br.com.jcaguiar.pagamentos.model.MasterModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
